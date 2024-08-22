@@ -1,0 +1,45 @@
+html{
+    font-size: 62.5%;
+}
+body{
+    background-color: black;
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+h1{
+    font-size: 3rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+
+}
+
+.container{
+    display: flex;
+justify-content: center;
+align-items: center;
+gap: 2rem;
+}
+
+.container button{
+    padding: .6rem 2rem;
+    border: 1px solid white;
+    font-family: sans-serif;
+    font-weight: 500;
+    background: none;
+    color: white;
+    cursor: pointer;
+}
+
+.container button:hover{
+    background-color: red;
+    color: white;
+    border: none;
+}

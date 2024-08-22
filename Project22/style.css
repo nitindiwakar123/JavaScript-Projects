@@ -1,0 +1,81 @@
+body {
+    background-color: #f1f1f1;
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 50px;
+}
+
+p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    border: none;
+    font-size: 3rem;
+    margin: 0 0.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+#rock {
+    background-color: #ff0000;
+}
+
+#paper {
+    background-color: #2196f3;
+}
+
+#scissors {
+    background-color: #4caf50;
+}
+
+#user-score {
+    color: #2196f3;
+}
+
+#computer-score {
+    color: #ff0000;
+}
+
+#new-game {
+    background-color: rgb(18, 96, 252);
+    color: white;
+    font-family: sans-serif;
+    font-weight: 500;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#new-game:hover {
+    background-color: rgb(50, 118, 252);
+}
+
+#initialResult {
+    margin: 0;
+}
