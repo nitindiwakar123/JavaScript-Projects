@@ -2,7 +2,7 @@ let randomNumber = parseInt(Math.random() * 100 + 1);
 const form = document.querySelector('.form');
 const guessField = document.querySelector('#guessField');
 const button = document.querySelector('#subt');
-const startOver = document.querySelector('.resultParas');
+const startOver = document.querySelector('.form');
 const guesses = document.querySelector('.guesses');
 let remaining = document.querySelector('.lastResult');
 const lowOrHi = document.querySelector('.lowOrHi');
@@ -63,14 +63,14 @@ const cleanGuess = (guess) => {
 };
 
 const display = (message) => {
-  lowOrHi.innerHTML = `<h2>${message}</h2>`;
+  lowOrHi.innerHTML = `<span>${message}</span>`;
 };
 
 const endGame = () => {
   guessField.value = '';
   guessField.setAttribute('disabled', '');
-  p.classList.add('button');
-  p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+  p.classList.add('btn');
+  p.innerHTML = `<span id="newGame">Start new Game</span>`;
   startOver.appendChild(p);
   playGame = false;
   newGame();
