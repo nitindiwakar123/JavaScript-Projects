@@ -83,6 +83,7 @@ body {
 
     #clock {
         font-size: 5rem;
+        height: 100%;
         /* background-color: #210707; */
     }
 }
