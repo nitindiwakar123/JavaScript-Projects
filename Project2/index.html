@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BMI Calculator</title>
     <style>
         * {
             margin: 0;
@@ -61,6 +61,11 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-weight: 600;
             color: white;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
         }
 
         input {
@@ -112,6 +117,13 @@
             /* font-weight: 550; */
             /* background-color: black; */
 
+        }
+
+        @media screen and (max-width: 500px) {
+            .inputFields {
+                justify-content: flex-start;
+                gap: 0;
+            }
         }
     </style>
 </head>
