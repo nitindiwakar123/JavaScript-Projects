@@ -1,0 +1,149 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: aliceblue;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile {
+    width: 430px;
+    height: 930px;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.resultContainer {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 2rem;
+}
+
+.data {
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.buttonsContainer {
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    font-size: 2rem;
+    gap: 1rem;
+    font-family: sans-serif;
+}
+
+.topButtons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+.otherButtons {
+    display: grid;
+    grid-template-columns: 4fr 1.3fr;
+}
+
+.numberButtons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+}
+
+.rightButtons {
+    display: grid;
+    place-items: center;
+}
+
+span {
+    padding: 1rem 2rem;
+    width: 9rem;
+    height: 7.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    font-family: monospace;
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+span:hover {
+    cursor: pointer;
+
+}
+
+.gray {
+    background-color: #616161;
+}
+
+.blue {
+    background-color: #005DB2;
+}
+
+.skyblue {
+    background-color: #B2DAFF;
+}
+
+.numbers {
+    background-color: rgb(18, 18, 18);
+    color: #29A8FF;
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+.sidebuttons {
+    height: 10.5rem;
+}
+
+#zero {
+    /* justify-self: start; */
+    width: 19.5rem;
+    grid-column: 1/ span 2;
+}
+
+@media screen and (min-width: 1000px) {
+    .mobile {
+        width: 300px;
+        height: 600px;
+    }
+
+    .buttonsContainer {
+        gap: 0;
+    }
+
+    span {
+        font-size: 2.5rem;
+        width: 6rem;
+        height: 5rem;
+    }
+
+    .sidebuttons {
+        height: 7rem;
+    }
+
+    #zero {
+        width: 15rem;
+    }
+
+    .numbers {
+        font-size: 2.5rem;
+    }
+}
