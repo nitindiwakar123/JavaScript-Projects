@@ -32,7 +32,6 @@ form {
     max-width: 400px;
     width: 100%;
     text-align: center;
-    position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
@@ -75,15 +74,16 @@ form::after {
 h1.heading {
     font-size: 36px;
     font-weight: 800;
-    color: #2980b9; /* A vibrant blue color for prominence */
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
+    color: #2980b9;
+    /* Deep Blue for a modern and cohesive look */
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Enhanced shadow for better visibility */
+    margin-bottom: 30px;
     text-align: center;
     letter-spacing: 1px;
     line-height: 1.2;
     animation: fadeInUp 1s ease-out;
 }
-
 
 /* Animation for Heading */
 @keyframes fadeInUp {
@@ -91,12 +91,12 @@ h1.heading {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
-
 
 /* Input Field with animation */
 input[type="text"] {
@@ -211,6 +211,41 @@ button.play-btn:active {
     box-shadow: 0 4px 15px rgba(39, 174, 96, 0.2);
 }
 
+/* Enhanced animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Modal Styling */
 .modal {
     position: fixed;
@@ -268,45 +303,14 @@ button.modal-close-btn:hover {
     background-color: #c0392b;
 }
 
-/* Additional Input Styles */
-input[type="text"] {
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 25px;
-    background-color: rgba(255, 255, 255, 0.4);
-    padding: 12px 20px;
-    color: #333;
-    font-size: 16px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+/* Hover Effects for input and buttons */
+input[type="text"]:hover {
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
 }
 
-input[type="text"]:focus {
-    border-color: #3498db;
-    box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
-}
-
-/* Enhanced Button Styles */
-button.btn {
-    margin-top: 20px;
-    background-color: #2980B9;
-    color: #fff;
-    padding: 14px 30px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: 700;
-    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 8px 30px rgba(41, 128, 185, 0.4);
-}
-
-button.btn:hover:not(:disabled) {
-    background: linear-gradient(135deg, #2980B9 0%, #6DD5FA 100%);
-
+button.btn:hover {
+    box-shadow: 0 10px 25px rgba(41, 128, 185, 0.6);
     transform: translateY(-5px);
-}
-
-button.btn:active {
-    transform: translateY(1px);
-    box-shadow: 0 4px 15px rgba(41, 128, 185, 0.2);
 }
 
 /* Responsive Design */
@@ -337,6 +341,7 @@ button.btn:active {
 
 /* Responsive Design for small screens */
 @media (max-width: 480px) {
+
     h1.heading {
         font-size: 24px;
         margin-bottom: 15px;
@@ -355,174 +360,4 @@ button.btn:active {
         font-size: 12px;
         padding: 8px 16px;
     }
-}
-
-/* Additional Utility Classes */
-.text-center {
-    text-align: center;
-}
-
-.mt-10 {
-    margin-top: 10px;
-}
-
-.mb-20 {
-    margin-bottom: 20px;
-}
-
-.p-20 {
-    padding: 20px;
-}
-
-.bg-light {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Enhanced form input focus with outline */
-input[type="text"]:focus {
-    outline: 2px solid #3498db;
-}
-
-/* Button with icon */
-button.btn-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-button.btn-icon .icon {
-    width: 20px;
-    height: 20px;
-}
-
-/* Icon Styles */
-.icon {
-    width: 24px;
-    height: 24px;
-    fill: currentColor;
-}
-
-/* Tooltip Styles */
-.tooltip {
-    position: absolute;
-    background-color: #333;
-    color: #fff;
-    padding: 8px;
-    border-radius: 5px;
-    font-size: 14px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 100;
-}
-
-.tooltip::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid #333;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.tooltip.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Card Hover Effect */
-.card {
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.card:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px);
-}
-
-/* Scroll to Top Button */
-.scroll-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    background: #3498db;
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 24px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.scroll-to-top:hover {
-    background: #2980b9;
-    transform: scale(1.1);
-}
-
-.scroll-to-top:active {
-    transform: scale(1);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* Accessibility Improvements */
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-}
-
-.focus-visible {
-    outline: 2px solid #3498db;
-    outline-offset: 2px;
-}
-
-/* Flex Utilities */
-.flex {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.flex-column {
-    flex-direction: column;
-}
-
-.flex-row {
-    flex-direction: row;
-}
-
-/* Grid Utilities */
-.grid {
-    display: grid;
-}
-
-.grid-cols-2 {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.grid-cols-3 {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.grid-gap-20 {
-    gap: 20px;
 }
