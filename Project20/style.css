@@ -71,6 +71,33 @@ form::after {
     }
 }
 
+/* Heading Styles for English Dictionary */
+h1.heading {
+    font-size: 36px;
+    font-weight: 800;
+    color: #2980b9; /* A vibrant blue color for prominence */
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    animation: fadeInUp 1s ease-out;
+}
+
+
+/* Animation for Heading */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 /* Input Field with animation */
 input[type="text"] {
     width: 100%;
@@ -292,6 +319,11 @@ button.btn:active {
         padding: 20px;
     }
 
+    h1.heading {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
     input[type="text"] {
         padding: 10px;
         font-size: 14px;
@@ -305,6 +337,11 @@ button.btn:active {
 
 /* Responsive Design for small screens */
 @media (max-width: 480px) {
+    h1.heading {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
     .title {
         font-size: 20px;
     }
