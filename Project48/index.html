@@ -10,23 +10,30 @@
 
 <body>
     <main>
-        <h1>Tic Tac Toe Game</h1>
-        <p><span>Player1: You</span>, <span>Player2: Computer</span></p>
-        <div class="container">
-            <div class="game">
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-            </div>
+        <h1>Tic-Tac-Toe</h1>
+        
+        <!-- Player Labels -->
+        <div class="player-labels">
+            <div class="player" id="player1">Player 1: You (O)</div>
+            <div class="player" id="player2">Player 2: Computer (X)</div>
         </div>
-        <button id="reset-btn">Reset Game</button>
-        <p class="result" id="result"></p>
+
+        <!-- Game Board -->
+        <div class="board">
+            <button class="box" id="box0"></button>
+            <button class="box" id="box1"></button>
+            <button class="box" id="box2"></button>
+            <button class="box" id="box3"></button>
+            <button class="box" id="box4"></button>
+            <button class="box" id="box5"></button>
+            <button class="box" id="box6"></button>
+            <button class="box" id="box7"></button>
+            <button class="box" id="box8"></button>
+        </div>
+
+        <!-- Result and Reset Button -->
+        <div id="result" class="result"></div>
+        <button id="reset-btn" class="btn">Reset Game</button>
     </main>
 </body>
 <script src="script.js"></script>

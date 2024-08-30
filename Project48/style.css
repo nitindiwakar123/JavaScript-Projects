@@ -1,62 +1,123 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-html{
-    font-size: 62.5%;
-}
-
-body{
-    background-color: #548687;
+/* Body Styles */
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0;
 }
 
-main{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* Main Container */
+main {
+    text-align: center;
+    border: 2px solid #0ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #0ff;
+    background: rgba(26, 26, 26, 0.8);
 }
 
-.container{
-    padding: 5rem;
+.player-labels {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #00ffcc;
+    /* Neon color */
 }
 
-.game{
+.player {
+    padding: 10px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Game Board */
+.board {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    justify-items: center;
-    gap: 1rem;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin: 20px auto;
 }
 
-.box{
-    padding: 2rem 3rem;
-    font-size: 5rem;
-    font-weight: 700;
-    border-radius: 1.5rem;
-    border: none;
-    box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
-    color: #b0413e;
-    background-color: #ffffc7;
-}
-
-#reset-btn{
-    padding: 1rem;
-    font-size: 1.25rem;
-    background-color: #191913;
-    color: white;
-    border-radius: 1rem;
-    border: none;
+/* Boxes */
+.box {
+    background-color: transparent;
+    border: 2px solid #0ff;
+    font-size: 3em;
+    color: #0ff;
+    text-align: center;
+    line-height: 100px;
     cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0ff;
+}
+
+.box:hover {
+    background-color: #0ff;
+    color: #1a1a1a;
+    box-shadow: 0 0 20px #0ff;
+}
+
+/* Winning and Draw States */
+#result {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #0ff;
+    animation: glow 1s infinite alternate;
+}
+
+/* Reset Button */
+#reset-btn {
+    background-color: #0ff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #1a1a1a;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #0ff;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-top: 20px;
+}
+
+#reset-btn:hover {
+    background-color: #00f;
+    box-shadow: 0 0 20px #00f;
+}
+
+/* Start New Game Button */
+#new-game {
+    background-color: #ff00ff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #1a1a1a;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ff00ff;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-top: 20px;
+}
+
+#new-game:hover {
+    background-color: #f0f;
+    box-shadow: 0 0 20px #f0f;
+}
+
+/* Animations */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff, 0 0 20px #0ff;
+    }
+
+    100% {
+        text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff;
+    }
 }
