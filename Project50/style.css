@@ -1,0 +1,55 @@
+body{
+    background-color: black;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    background-color: aliceblue;
+    width: 60%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.quiz-container{
+    color: black;
+    background-color: red;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+p{
+    display: flex;
+    
+}
+
+.fa-check{
+    font-size: 1rem;
+    background-color: red;
+    color: blue;
+    border: 2px solid gray;    
+}
+
+.fa-remove{
+    font-size: 1rem;
+    background-color: red;
+    color: blue;
+    border: 2px solid gray;    
+}
