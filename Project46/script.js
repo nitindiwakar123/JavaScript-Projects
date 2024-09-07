@@ -1,91 +1,63 @@
-const buttonsContainerEl = document.querySelector('.buttonsContainer');
-const resultContainerEl = document.querySelector('.resultContainer');
-const valuesEl = document.querySelector('.data');
+const accessKey =
+    "RZEIOVfPhS7vMLkFdd2TSKGFBS4o9_FmcV1Nje3FSjw";
 
-let result;
-let input = "";
+const formEl = document.querySelector('form');
+const inputEl = document.querySelector('#input');
+const showMoreButtonEl = document.querySelector('#show-more');
+const imageWrapperEl = document.querySelector('.image-wrapper');
 
-const displayResult = () => {
-    valuesEl.innerText = result;
+let inputData = "";
+let page = 1;
+
+const searchImages = async () => {
+    inputData = inputEl.value;
+    const url = `https://api.unsplash.com/search/photos?page=${page}&query=${inputData}&client_id=${accessKey}`;
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        const results = data.results;
+
+        results.forEach((result) => {
+            const imageContainerEl = document.createElement('div');
+            imageContainerEl.classList.add('image-container');
+            const image = document.createElement('img');
+            image.src = result.urls.small;
+            image.alt = result.alt_description;
+            const imageLink = document.createElement('a');
+            imageLink.href = result.links.html;
+            imageLink.target = "_blank";
+            imageLink.textContent = result.alt_description;
+
+            imageContainerEl.appendChild(image);
+            imageContainerEl.appendChild(imageLink);
+            imageWrapperEl.appendChild(imageContainerEl);
+        });
+
+        page++;
+
+        if (page > 1) {
+            showMoreButtonEl.style.display = "block";
+        }
+        else {
+            showMoreButtonEl.style.display = "none"; // Hide if no results
+        }
+    } catch (error) {
+        console.log(error);
+        const p = document.createElement('p');
+        p.classList.add('error-message');
+        p.innerText = "Something went wrong. please try again later.";
+        imageWrapperEl.appendChild(p);
+    }
 }
 
-const calculateResult = (operator, num1, num2) => {
+formEl.addEventListener('submit', (e) => {
+    e.preventDefault();
+    imageWrapperEl.innerHTML = "";
+    page = 1;
+    searchImages();
+});
 
-    switch (operator) {
-        case '+':
-            result = num1 + num2;
-            break;
-
-        case '-':
-            result = num1 - num2;
-            break;
-
-        case '*':
-            result = num1 * num2;
-            break;
-
-        case '/':
-            result = num1 / num2;
-            break;
-
-        default:
-            result = "error";
-            break;
-    }
-    return result;
-}
-
-const checkValues = (value) => {
-    input += value;
-    valuesEl.innerText = input;
-    let num1 = result;
-    let num2 = 0;
-    let operator;
-
-    if (input.includes('+')) {
-        operator = '+';
-        num1 = parseFloat(input.slice(0, input.indexOf('+')));
-        num2 = parseFloat(input.slice(input.indexOf('+') + 1));
-    }
-    else if (input.includes('-')) {
-        operator = '-';
-        num1 = parseFloat(input.slice(0, input.indexOf('-')));
-        num2 = parseFloat(input.slice(input.indexOf('-') + 1));
-    }
-    else if (input.includes('*')) {
-        operator = '*';
-        num1 = parseFloat(input.slice(0, input.indexOf('*')));
-        num2 = parseFloat(input.slice(input.indexOf('*') + 1));
-    }
-    else if (input.includes('/')) {
-        operator = '/';
-        num1 = parseFloat(input.slice(0, input.indexOf('/')));
-        num2 = parseFloat(input.slice(input.indexOf('/') + 1));
-    }
-
-    calculateResult(operator, num1, num2);
-}
-
-const checkInput = (e) => {
-    let value = e.target.dataset.value;
-
-    if (value == "AC") {
-        allClear()
-    }
-    else if (value == "clear") {
-        clear()
-    }
-    else if (value == "=") {
-        displayResult();
-    }
-    else if (value == "+" || value == "-" || value == "*" || value == "/") {
-        checkValues(value);
-    }
-    else {
-        console.log(value);
-        checkValues(value)
-    }
-
-}
-
-buttonsContainerEl.addEventListener('click', checkInput, false)
+showMoreButtonEl.addEventListener('click', (e) => {
+    searchImages();
+});

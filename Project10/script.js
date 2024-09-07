@@ -2,6 +2,7 @@ const button = document.querySelector('#btn');
 const ul = document.querySelector('ul');
 
 button.addEventListener('click', function (e) {
+    
     // if (ul.classList.contains('sm')) {
     //     ul.classList.remove('sm');
 
@@ -11,5 +12,6 @@ button.addEventListener('click', function (e) {
     //     ul.classList.add('sm');
     // }
 
-    ul.classList.toggle('sm')
+    ul.classList.toggle('sm');
+    
 })

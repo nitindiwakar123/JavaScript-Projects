@@ -1,68 +1,131 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
 body {
-    margin: 0;
-    background: linear-gradient(to left, lightblue, lightgreen);
-    font-family: "Courier New", Courier, monospace;
-  }
-  
-  .heading {
-    color: darkblue;
-    text-align: center;
-    padding-top: 10px;
-    font-size: 35px;
-  }
-  
-  .info-text {
-    text-align: center;
-    color: darkblue;
-    font-size: 18px;
-  }
-  
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+/* Heading Styling */
+.heading {
+  font-size: 3rem;
+  color: #f0f0f0;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Information Text */
+.info-text {
+  font-size: 1.1rem;
+  color: #b0b0b0;
+  margin-bottom: 20px;
+}
+
+/* App Container Styling */
+.app {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  position: relative;
+  padding: 20px;
+  background-color: #2c2c2c;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Button Styling */
+.btn {
+  background-color: #ff6f61;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.btn:hover {
+  background-color: #ff8a7d;
+  transform: scale(1.1);
+}
+
+/* Note Styling */
+.note {
+  width: 100%;
+  max-width: 300px;
+  height: 200px;
+  padding: 10px;
+  border: 2px solid #444;
+  border-radius: 8px;
+  font-size: 1rem;
+  resize: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  overflow: auto;
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+.note:focus {
+  border-color: #ff6f61;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  outline: none;
+}
+
+/* Note Hover Effect */
+.note:hover {
+  border-color: #ff6f61;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
   .app {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 300px);
-    gap: 40px;
-    justify-content: center;
-    padding: 50px;
+      flex-direction: column;
+      align-items: center;
   }
-  
+
   .note {
-    padding: 17px;
-    border-radius: 15px;
-    resize: none;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-    font-size: 18px;
-    height: 200px;
-    color: darkblue;
-    border: none;
-    outline: none;
-    background: rgba(255, 255, 255, 0.1);
-    box-sizing: border-box;
+      width: 100%;
+      max-width: none;
   }
-  
-  .note::placeholder {
-    color: gray;
-    opacity: 30%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
   }
-  
-  .note:hover,
-  .note:focus {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    transition: all 300ms ease;
+  to {
+      opacity: 1;
+      transform: translateY(0);
   }
-  
-  .btn{
-      height: 200px;
-      border-color: rgba(255, 255, 255, 0.37);
-      background: rgba(255, 255, 255, 0.27);
-      border-radius: 15px;
-      font-size: 70px;
-      font-weight: 700;
-      color: rgba(0, 0, 0, 0.3);
-      cursor: pointer;
-  }
-  
-  .btn:hover{
-      background: rgba(255, 255, 255, 0.55);
-      color: rgba(0, 0, 0, 0.6);
-      transition: all 300ms ease;
-  }
+}
+
+.note {
+  animation: fadeIn 0.5s ease-out;
+}

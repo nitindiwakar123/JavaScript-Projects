@@ -4,18 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Search App</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Tic Tac Toe Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <form class="form">
-        <span class="input-bar"><i class="fas fa-search"></i><input type="text" id="input" placeholder="Search for images..."></span>
-        <span><button type="submit" id="submit" class="btn">Search</button></span>
-    </form>
-    <div class="image-wrapper"></div>
-    <button id="show-more" class="btn">Show more</button>
+    <main>
+        <h1>Tic-Tac-Toe</h1>
+        
+        <!-- Player Labels -->
+        <div class="player-labels">
+            <div class="player" id="player1">Player 1: You (O)</div>
+            <div class="player" id="player2">Player 2: Computer (X)</div>
+        </div>
+
+        <!-- Game Board -->
+        <div class="board">
+            <button class="box" id="box0"></button>
+            <button class="box" id="box1"></button>
+            <button class="box" id="box2"></button>
+            <button class="box" id="box3"></button>
+            <button class="box" id="box4"></button>
+            <button class="box" id="box5"></button>
+            <button class="box" id="box6"></button>
+            <button class="box" id="box7"></button>
+            <button class="box" id="box8"></button>
+        </div>
+
+        <!-- Result and Reset Button -->
+        <div id="result" class="result"></div>
+        <button id="reset-btn" class="btn">Reset Game</button>
+    </main>
 </body>
 <script src="script.js"></script>
 

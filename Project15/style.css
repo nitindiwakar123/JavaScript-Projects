@@ -54,6 +54,11 @@ button[disabled] {
         width: 350px;
     }
 
+    #stopwatch {
+        font-size: 4rem;
+        width: 400px;
+    }
+
     button {
         font-size: 1.5rem;
         padding: 1rem 2rem;

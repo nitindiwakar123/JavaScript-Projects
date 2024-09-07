@@ -1,32 +1,141 @@
-body {
+* {
+    padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: aliceblue;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile {
+    width: 100%;
+    height: 100%;
     background-color: black;
+    color: white;
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.resultContainer {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 2rem;
+}
+
+.resultContainer input{
+    width: 100%;
+    font-size: 5rem;
+    font-family: monospace;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    text-align: end;
+    background: transparent;
+    color: white;
+}
+
+
+.data {
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.buttonsContainer {
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    font-size: 2rem;
+    gap: 1rem;
+    font-family: sans-serif;
+}
+
+.topButtons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.otherButtons {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 1rem;
+}
+
+.numberButtons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.rightButtons {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2rem;
+
+}
+
+span {
+    padding: 2rem 2rem;
+    /* width: 80%; */
+    /* height: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    font-family: monospace;
+    font-size: 3rem;
+    font-weight: 600;
     overflow: hidden;
-  }
-  
-  span {
-    background: url("https://cdn4.iconfinder.com/data/icons/general-office/91/General_Office_54-512.png");
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    pointer-events: none;
-    background-size: cover;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    animation: animate 6s linear;
-  }
-  
-  @keyframes animate {
-    0% {
-      transform: translate(-50%, -50%);
-      opacity: 1;
-      filter: hue-rotate(0);
+}
+
+span:hover {
+    cursor: pointer;
+
+}
+
+.gray {
+    background-color: #616161;
+}
+
+.blue {
+    background-color: #005DB2;
+}
+
+.skyblue {
+    background-color: #B2DAFF;
+}
+
+.numbers {
+    background-color: rgb(18, 18, 18);
+    color: #29A8FF;
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+
+#zero {
+    justify-self: stretch;
+    /* width: 19.5rem; */
+    grid-column: 1/ span 2;
+}
+
+@media screen and (min-width: 1000px) {
+    .mobile {
+        width: 300px;
+        height: 600px;
     }
-    100% {
-      transform: translate(-50%, -5000%);
-      opacity: 0;
-      filter: hue-rotate(720deg);
-    }
-  }
+
+}

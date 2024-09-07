@@ -1,45 +1,72 @@
-html{
-    font-size: 62.5%;
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
-    background-color: black;
-    color: white;
-    width: 100vw;
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
-    overflow-x: hidden;
+    background-color: #1e1e1e;
+    /* Default background color */
+    color: white;
+    transition: background-color 1s ease;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    color: #ffd700;
+}
+
+.container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
+    gap: 20px;
 }
 
-h1{
-    font-size: 3rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 700;
-
-}
-
-.container{
-    display: flex;
-justify-content: center;
-align-items: center;
-gap: 2rem;
-}
-
-.container button{
-    padding: .6rem 2rem;
-    border: 1px solid white;
-    font-family: sans-serif;
-    font-weight: 500;
-    background: none;
+/* Button Styling */
+button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
     color: white;
-    cursor: pointer;
-}
-
-.container button:hover{
-    background-color: red;
-    color: white;
+    background-color: #ff6347;
     border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #ff4500;
+    transform: translateY(-5px);
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+/* Specific button colors */
+#start {
+    background-color: #4caf50;
+}
+
+#stop {
+    background-color: #f44336;
+}
+
+#start:hover {
+    background-color: #45a049;
+}
+
+#stop:hover {
+    background-color: #e53935;
 }

@@ -4,7 +4,7 @@ body {
     justify-content: center;
     height: 100vh;
     align-items: center;
-    background-color: yellow;
+    background: linear-gradient(rgb(112, 112, 233), rgb(87, 210, 210), rgb(204, 73, 73));
 }
 
 .container {
@@ -34,7 +34,7 @@ body {
     position: absolute;
     height: 4px;
     width: 0%;
-    background-color: rgb(6, 128, 0);
+    background-color: rgb(25, 0, 255);
     border: none;
     z-index: -1;
     margin: 0;
@@ -56,8 +56,8 @@ body {
 }
 
 .step.checked {
-    color: green;
-    border-color: green;
+    color: rgb(25, 0, 255);
+    border-color: rgb(25, 0, 255);
     transition: all 0.4s linear;
     transition-delay: 0.3s;
 }

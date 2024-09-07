@@ -1,63 +1,122 @@
-const accessKey =
-    "RZEIOVfPhS7vMLkFdd2TSKGFBS4o9_FmcV1Nje3FSjw";
+const boxes = document.querySelectorAll('.box');
+const resetButtonEl = document.querySelector('#reset-btn'); // Corrected typo
+const resultEl = document.querySelector('#result');
+const mainEl = document.querySelector('main');
 
-const formEl = document.querySelector('form');
-const inputEl = document.querySelector('#input');
-const showMoreButtonEl = document.querySelector('#show-more');
-const imageWrapperEl = document.querySelector('.image-wrapper');
+let boxCounter = 0;
+let turnO = true;
+let gameActive = true;
+const winPatterns = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+];
 
-let inputData = "";
-let page = 1;
+const getComputerMove = () => {
+    const emptyBoxes = Array.from(boxes).filter(box => box.innerText === "");
 
-const searchImages = async () => {
-    inputData = inputEl.value;
-    const url = `https://api.unsplash.com/search/photos?page=${page}&query=${inputData}&client_id=${accessKey}`;
+    if (emptyBoxes.length === 0) {
+        return;
+    }
 
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        const results = data.results;
+    const randomBox = emptyBoxes[Math.floor(Math.random() * emptyBoxes.length)];
+    return randomBox;
+}
 
-        results.forEach((result) => {
-            const imageContainerEl = document.createElement('div');
-            imageContainerEl.classList.add('image-container');
-            const image = document.createElement('img');
-            image.src = result.urls.small;
-            image.alt = result.alt_description;
-            const imageLink = document.createElement('a');
-            imageLink.href = result.links.html;
-            imageLink.target = "_blank";
-            imageLink.textContent = result.alt_description;
+boxes.forEach((box) => {
+    box.addEventListener('click', (e) => {
+        if (!gameActive || box.innerText !== "") return;
 
-            imageContainerEl.appendChild(image);
-            imageContainerEl.appendChild(imageLink);
-            imageWrapperEl.appendChild(imageContainerEl);
-        });
+        box.innerText = "O";
+        turnO = false;
+        boxCounter++;
+        box.disabled = true;
+        checkWinner();
 
-        page++;
-
-        if (page > 1) {
-            showMoreButtonEl.style.display = "block";
+        if (gameActive && boxCounter < 9) {
+            setTimeout(() => {
+                const computerBox = getComputerMove();
+                if (computerBox) {
+                    computerBox.innerText = "X";
+                    computerBox.disabled = true;
+                    boxCounter++;
+                    turnO = true;
+                    checkWinner();
+                }
+            }, 500);
         }
-        else {
-            showMoreButtonEl.style.display = "none"; // Hide if no results
+        turnO = !turnO;
+    });
+});
+
+const resetGame = () => {
+    turnO = true;
+    gameActive = true;
+    boxCounter = 0; // Reset boxCounter
+    enableBoxes();
+    resultEl.innerText = "";
+}
+
+const checkWinner = () => {
+    if (resultEl.innerText != "") return;
+
+    for (let pattern of winPatterns) {
+        const posiVal1 = boxes[pattern[0]].innerText;
+        const posiVal2 = boxes[pattern[1]].innerText;
+        const posiVal3 = boxes[pattern[2]].innerText;
+
+        if (posiVal1 !== "" && posiVal2 !== "" && posiVal3 !== "") {
+            if (posiVal1 === posiVal2 && posiVal2 === posiVal3) {
+
+                resultEl.innerText = `Winner: ${posiVal1}`;
+                disableBoxes();
+                endGame();
+                gameActive = false;
+                return
+            }
         }
-    } catch (error) {
-        console.log(error);
-        const p = document.createElement('p');
-        p.classList.add('error-message');
-        p.innerText = "Something went wrong. please try again later.";
-        imageWrapperEl.appendChild(p);
+    }
+
+    if (boxCounter === 9) { // Draw condition checked after winner check
+        resultEl.innerText = "It's a Draw";
+        endGame();
     }
 }
 
-formEl.addEventListener('submit', (e) => {
-    e.preventDefault();
-    imageWrapperEl.innerHTML = "";
-    page = 1;
-    searchImages();
+const disableBoxes = () => {
+    boxes.forEach((box) => {
+        box.disabled = true;
+    });
+}
+
+const enableBoxes = () => {
+    boxes.forEach((box) => {
+        box.disabled = false;
+        box.innerText = "";
+    });
+}
+
+const endGame = () => {
+    resetButtonEl.disabled = true; // Corrected typo
+    const newGameBtn = document.createElement('button');
+    newGameBtn.classList.add('btn');
+    newGameBtn.id = "new-game";
+    newGameBtn.innerText = "Start New Game";
+    mainEl.appendChild(newGameBtn);
+    newGameBtn.addEventListener('click', () => {
+        resetButtonEl.disabled = false; // Corrected typo
+        resetGame();
+        newGameBtn.remove();
+    });
+}
+   
+resetButtonEl.addEventListener('click', () => { // Corrected typo
+    resetGame();
 });
 
-showMoreButtonEl.addEventListener('click', (e) => {
-    searchImages();
-});
+

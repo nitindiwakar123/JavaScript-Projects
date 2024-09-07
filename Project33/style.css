@@ -5,17 +5,18 @@ body {
   height: 100vh;
   align-items: center;
   text-align: center;
-  background-color: yellow;
+  background-color: rgb(236, 191, 251);
   font-family: cursive;
 }
 
 .stats-container {
   margin: 20px;
-  border: dotted green;
-  min-width: 200px;
-  height: 100px;
+  border: 5px solid rgb(59, 10, 255);
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
   position: relative;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 .stats-container h4 {
@@ -23,7 +24,7 @@ body {
   bottom: 1px;
   left: 50%;
   transform: translateX(-50%);
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 .icon {
@@ -34,6 +35,7 @@ body {
 }
 
 .counter {
+  margin-top: 20px;
   font-size: 50px;
   position: absolute;
   left: 50%;

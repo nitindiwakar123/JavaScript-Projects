@@ -1,92 +1,44 @@
-*{
+body {
     margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    box-sizing: border-box;
-}
-
-.container{
-    width: 100%;
+    display: flex;
+    justify-content: center;
     height: 100vh;
-    background-color: salmon;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    background-color: wheat;
 }
 
-.calender{
-    background-color: black;
-    color: lightgray;
-    width: 450px;
-    height: 520px;
+.slider-container {
+    position: relative;
+    width: 500px;
+    overflow: hidden;
+    height: 300px;
     border-radius: 10px;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, .4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.month{
-    width: 100%;
-    height: 120px;
-    background-color: lightseagreen;
+.image-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border-radius: 10px 10px 0 0;
+    transition: transform 0.4s ease-in-out;
 }
 
-.month h1{
-    font-size: 30px;
-    font-weight: 400;
-    text-transform: uppercase;
-}
-
-.month p{
-    font-size: 16px;
-}
-
-.weekdays{
-    width: 100%;
-    height: 50px;
-    display: flex;
-}
-
-.weekdays div{
-    font-size: 15px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.days{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 2px;
-}
-
-.days div{
-    font-size: 14px;
-    margin: 3px;
-    width: 57.5px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.days div:hover:not(.empty){
-    border: 2px solid gray;
+.btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 20px;
+    opacity: 0.5;
     cursor: pointer;
 }
 
-.today{
-    background-color: lightseagreen;
+.btn.prev {
+    left: 10px;
 }
 
-.empty{
-    border: none;
-    visibility: hidden;
+.btn.next {
+    right: 10px;
+}
+
+.btn:hover {
+    opacity: 1;
 }

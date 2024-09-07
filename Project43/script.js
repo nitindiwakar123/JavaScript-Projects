@@ -1,49 +1,37 @@
-const dateEl = document.querySelector('.date');
-const daysEl = document.querySelector('.days');
+const allImages = document.querySelectorAll('.image-container img');
+const imageContainerEl = document.querySelector('.image-container');
+const prevButtonEl = document.querySelector('.prev');
+const nextButtonEl = document.querySelector('.next');
 
-const currentDate = new Date();
-let currentMonth = currentDate.getMonth();
-let currentYear = currentDate.getFullYear();
+let currentImage = 0;
+let timeout;
 
-function getDaysInMonth(month, year) {
-    return new Date(year, month + 1, 0).getDate();
-}
+nextButtonEl.addEventListener('click', () => {
+    currentImage++;
+    clearTimeout(timeout);
+    updateImg();
+}, false);
 
-function getStartDay(month, year) {
-    let startDay = new Date(year, month, 1).getDay();
-    return (startDay === 0) ? 6 : startDay - 1;
-}
+prevButtonEl.addEventListener('click', () => {
+    currentImage--;
+    clearTimeout(timeout);
+    updateImg();
+}, false);
 
-function generateDays() {
-    let totalDays = getDaysInMonth(currentMonth, currentYear);
-    let startDay = getStartDay(currentMonth, currentYear);
 
-    for (let i = 0; i < startDay; i++) {
-        const emptyEl = document.createElement('div');
-        emptyEl.classList.add('empty');
-        daysEl.appendChild(emptyEl);
+const updateImg = () => {
+    if (currentImage > allImages.length - 1) {
+        currentImage = 0;
     }
-    for (let i = 1; i <= totalDays; i++) {
-        const dayEl = document.createElement('div');
-        dayEl.innerText = i;
-        if (currentDate.getDate() == i) {
-            dayEl.classList.add('today');
-        }
-        daysEl.appendChild(dayEl);
+    else if (currentImage < 0) {
+        currentImage = allImages.length - 1;
     }
+    imageContainerEl.style.transform = `translateX(-${currentImage * 100}%)`;
+
+    timeout = setTimeout(() => {
+        currentImage++;
+        updateImg();
+    }, 2000);
 }
 
-function displayCurrentDate() {
-    const h1 = dateEl.querySelector('h1');
-    const p = dateEl.querySelector('p');
-
-    h1.innerText = currentDate.toLocaleString("en", {
-        month: "long"
-    })
-
-    p.innerText = currentDate.toDateString();
-}
-
-displayCurrentDate();
-generateDays();
-
+updateImg();

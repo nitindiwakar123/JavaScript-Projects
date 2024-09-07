@@ -1,41 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe Game</title>
+    <title>To do list</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <main>
-        <h1>Tic-Tac-Toe</h1>
-        
-        <!-- Player Labels -->
-        <div class="player-labels">
-            <div class="player" id="player1">Player 1: You (O)</div>
-            <div class="player" id="player2">Player 2: Computer (X)</div>
-        </div>
-
-        <!-- Game Board -->
-        <div class="board">
-            <button class="box" id="box0"></button>
-            <button class="box" id="box1"></button>
-            <button class="box" id="box2"></button>
-            <button class="box" id="box3"></button>
-            <button class="box" id="box4"></button>
-            <button class="box" id="box5"></button>
-            <button class="box" id="box6"></button>
-            <button class="box" id="box7"></button>
-            <button class="box" id="box8"></button>
-        </div>
-
-        <!-- Result and Reset Button -->
-        <div id="result" class="result"></div>
-        <button id="reset-btn" class="btn">Reset Game</button>
-    </main>
+    <h1>To Do List</h1>
+    <div class="container">
+        <form class="form">
+            <input type="text" id="input" class="input">
+            <button type="submit" class="btn" id="add-btn">
+            <i class="fas fa-plus plus-icon"></i>
+            </button>
+        </form>
+    </div>
 </body>
 <script src="script.js"></script>
-
 </html>

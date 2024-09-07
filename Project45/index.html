@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heart Trail Animation</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+    <div class="mobile">
+        <div class="resultContainer">
+            <input type="text" class="input">
+        </div>
+        <div class="buttonsContainer">
+            <div class="topButtons">
+                <span data-value="AC" class="gray">AC</span>
+                <span data-value="clear" class="gray"><img src="assets/clear.svg" data-value="clear" alt=""></span>
+                <span data-value="/" class="blue">/</span>
+                <span data-value="*" class="blue">*</span>
+            </div>
+            <div class="otherButtons">
+                <div class="numberButtons">
+                    <span data-value="7" class="numbers">7</span>
+                    <span data-value="8" class="numbers">8</span>
+                    <span data-value="9" class="numbers">9</span>
+                    <span data-value="4" class="numbers">4</span>
+                    <span data-value="5" class="numbers">5</span>
+                    <span data-value="6" class="numbers">6</span>
+                    <span data-value="1" class="numbers">1</span>
+                    <span data-value="2" class="numbers">2</span>
+                    <span data-value="3" class="numbers">3</span>
+                    <span data-value="0" class="numbers" id="zero">0</span>
+                    <span data-value="." class="numbers">.</span>
+                </div>
+                <div class="rightButtons">
+                    <span data-value="-" class="blue sidebuttons" id="minus">-</span>
+                    <span data-value="+" class="blue sidebuttons">+</span>
+                    <span data-value="=" class="skyblue sidebuttons">=</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </body>
 <script src="script.js"></script>
+
 </html>
