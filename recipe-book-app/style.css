@@ -1,0 +1,444 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+.navBar {
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 1rem 5rem;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.logo .logoText {
+    font-size: 2.2rem;
+    font-weight: 900;
+    font-family: cursive;
+
+}
+
+.navLinks {
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 550;
+    list-style: none;
+    font-family: sans-serif;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navLinks a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.navLinks a:hover {
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    color: rgb(89, 89, 89);
+}
+
+.btn {
+    background-color: black;
+    color: white;
+    padding: .8rem 1rem;
+    font-size: small;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.btn a {
+    text-decoration: none;
+    color: white;
+}
+
+.btn:hover {
+    background-color: rgb(58, 57, 57);
+}
+
+header {
+    width: 100%;
+    height: 90%;
+    /* max-height: 80%; */
+    background-image: url(assets/images/background.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    background-clip: padding-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 5rem;
+}
+
+.column {
+    width: 40%;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.column .head {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.column p {
+    font-size: 1.5rem;
+    font-weight: 550;
+}
+
+.column button {
+    background-color: white;
+    color: black;
+    padding: .8rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.column button:hover {
+    background-color: rgb(212, 209, 209);
+}
+
+.column button a {
+    text-decoration: none;
+    font-weight: 550;
+    color: black;
+
+}
+
+main {
+    width: 100%;
+}
+
+.wrapper {
+    width: 100%;
+}
+
+.recipe-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 0;
+}
+
+.recipe-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem;
+    border-bottom: 3px solid rgb(0, 0, 0);
+}
+
+.last-recipe-item {
+    border-bottom: none;
+}
+
+.even {
+    flex-direction: row;
+}
+
+.odd {
+    flex-direction: row-reverse;
+}
+
+.recipe-item img {
+    width: 40%;
+}
+
+.text {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 15rem;
+}
+
+.text h2 {
+    font-size: 2.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+}
+
+.text p {
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-family: sans-serif;
+}
+
+.text a {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    font-weight: 550;
+    border: 1px solid black;
+}
+
+.text a:hover {
+    color: white;
+    background-color: black;
+}
+
+footer {
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 5rem;
+}
+
+.footer-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-one {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding-bottom: 5rem;
+    border-bottom: 1px solid white;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.footer-logoText {
+    font-size: 2.2rem;
+    font-weight: 900;
+    font-family: cursive;
+
+}
+
+.items h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.8rem;
+
+}
+
+.list li a {
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.section-two {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.footerlinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footerlinks li a {
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.icons span a {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+}
+
+#linkdin {
+    background-color: white;
+    color: black;
+    font-size: 1.5rem;
+    padding: .4rem .6rem;
+    border-radius: 5px;
+}
+
+
+@media screen and (max-width: 1200px) {
+    header {
+        max-height: 60%;
+    }
+
+    .text {
+        padding: 0 5rem;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    .navLinks {
+        display: none;
+    }
+
+    header {
+        max-height: 60%;
+    }
+
+    .column {
+        width: 100%;
+        padding: 0;
+    }
+
+    .recipe-item {
+        flex-direction: column-reverse;
+        padding: 5rem 2rem;
+    }
+
+    .recipe-item img {
+        width: 100%;
+    }
+
+    .text {
+        width: 100%;
+        padding: 2rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .section-one {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 3fr 3fr 3fr
+    }
+
+    .section-two {
+        flex-direction: column;
+        gap: 4rem;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .footerlinks {
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .navLinks {
+        display: none;
+    }
+
+    header {
+        max-height: 60%;
+    }
+
+    .column {
+        width: 100%;
+        padding: 0;
+    }
+
+    .recipe-item {
+        flex-direction: column-reverse;
+        padding: 5rem 2rem;
+    }
+
+    .recipe-item img {
+        width: 100%;
+    }
+
+    .text {
+        width: 100%;
+        padding: 2rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .section-one {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 3fr 3fr 3fr
+    }
+
+    .section-two {
+        flex-direction: column;
+        gap: 4rem;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .footerlinks {
+        justify-content: flex-start;
+    }
+}

@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(159, 209, 159);
+    position: relative;
+}
+
+#panel {
+    margin-top: 60px;
+    width: 80%;
+    height: 80%;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#ptop {
+    padding: 0 20%;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(64, 92, 64);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    justify-content: space-between;
+}
+
+.elem {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: black;
+    font-weight: 600;
+}
+
+.elem h4 {
+    font-size: 2rem;
+}
+
+.box {
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+#pbottom {
+    padding: 20px;
+    width: 100%;
+    background-color: #212121;
+    height: calc(100% - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.bubble{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6rem;
+    height: 6rem;
+    background-color: rgb(104, 185, 214);
+    color: #fff;
+    border-radius: 50%;
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+.bubble:hover {
+    cursor: pointer;
+    background-color: rgb(58, 165, 204);    
+}
+
+#high-score {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: 2px solid black;
+    padding: 5px 10px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.over {
+    color: rgb(239, 28, 28);
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+#restart{
+    padding: 5px 20px;
+    font-size: 1.8rem;
+    font-family: sans-serif;
+    font-weight: 500;
+    background-color: #212121;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #2e2e2e;
+    }
+
+}
+
+
+
+@media screen and (max-width: 720px) {
+    #ptop {
+        justify-content: center;
+        gap: 10px;
+    }
+    #pbottom {
+        padding: 5px 0;
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,254 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #0d1117;
+    color: #fff;
+}
+
+/* Container */
+.container {
+    background-color: #161b22;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: translateY(-10px);
+}
+
+/* Progress Bar */
+.progress-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.progress-bar-back {
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    height: 5px;
+    background-color: #555;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.progress-bar-front {
+    max-width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    height: 5px;
+    background-color: #6c5ce7;
+    width: 0%;
+    transform: translateY(-50%);
+    z-index: 2;
+    transition: width 0.4s ease-in-out;
+}
+
+/* Progress Steps */
+.step {
+    z-index: 3;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step i {
+    font-size: 20px;
+    padding: 8px;
+    border: 2px solid #6c5ce7;
+    border-radius: 50%;
+    background-color: #0d1117;
+    color: #6c5ce7;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+.step.checked i {
+    background-color: #6c5ce7;
+    color: #fff;
+}
+
+.step small {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #999;
+}
+
+/* Quiz Container */
+.quiz-container {
+    margin-bottom: 20px;
+}
+
+.question {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Options Styling */
+.optionsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.optionsContainer p {
+    display: flex;
+    align-items: center;
+}
+
+.optionsContainer input[type="radio"] {
+    display: none;
+}
+
+.optionsContainer label {
+    background-color: #2d333b;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    display: block;
+}
+
+.optionsContainer input[type="radio"]:checked+label {
+    background-color: #6c5ce7;
+    color: white;
+}
+
+.optionsContainer label:hover {
+    background-color: #444c56;
+}
+
+/* Buttons */
+
+.btn {
+    width: 100%;
+    background-color: #6c5ce7;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #5844c2;
+}
+
+#previous {
+    background-color: #444c56;
+}
+
+#previous:hover {
+    background-color: #2d333b;
+}
+
+.btn:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
+/* Result Container */
+.resultContainer {
+    display: none;
+    text-align: center;
+    padding: 20px;
+}
+
+.resultContainer.show {
+    display: block;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.resultContainer h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#restart {
+    background-color: #6c5ce7;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+#restart:hover {
+    background-color: #5844c2;
+}
+
+.percentageContainer {
+    width: 200px;
+    height: 200px;
+    font-size: 80px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-family: monospace;
+    border: 10px solid #6c5ce7;
+    ;
+    border-radius: 50%;
+    padding: 40px;
+    margin-bottom: 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+}

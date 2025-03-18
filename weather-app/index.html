@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="inputContainer">
+            <input type="text" placeholder="City" id="city">
+            <input type="text" placeholder="Country" id="country">
+            <button type="button" id="search" class="btn">Search</button>
+        </div>
+
+        <div class="tempContainer">
+            <div class="imageContainer">
+                <img src="" alt="" class="image" id="tempImage">
+            </div>
+            <h2 class="temp"></h2>
+            <p class="text"></p>
+            <p class="location"></p>
+        </div>
+
+        <div class="otherInfo">
+            <div class="wrapper">
+                <img src="assets/humidity.png" alt="" class="image" id="humiImage">
+                <div>
+                    <span id="humidity" class="items"></span>
+                    <span class="item-text">Humidity</span>
+                </div>
+            </div>
+            <div class="wrapper">
+                <img src="assets/weather.png" alt="" class="image" id="precipImage">
+                <div>
+                    <span id="precip" class="items"></span>
+                    <span class="item-text">Precipitation</span>
+                </div>
+            </div>
+            <div class="wrapper">
+                <img src="assets/wind.png" alt="" class="image" id="windImage">
+                <div>
+                    <span id="wind" class="items"></span>
+                    <span class="item-text">Wind</span>
+                </div>
+            </div>
+            <div class="wrapper">
+                <img src="assets/resilience.png" alt="" class="image" id="pressureImage">
+                <div>
+                    <span id="pressure" class="items"></span>
+                    <span class="item-text">Pressure</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
